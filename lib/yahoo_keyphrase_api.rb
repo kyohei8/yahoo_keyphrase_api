@@ -65,7 +65,6 @@ module YahooKeyphraseApi
             output: 'json'
           }
         })
-        #puts response.body, response.code, response.message, response.headers.inspect
         raise YahooKeyPhraseApiError.new(response.message) if response.code == 413
         Hashie::Mash.new MultiJson.decode(response.body)
       else
@@ -73,54 +72,5 @@ module YahooKeyphraseApi
       end
     end
   end
-
-=begin
-  class Hash
-    class << self
-      def from_libxml(xml)
-        begin
-          result = Nokogiri::XML(xml)
-          return {result.root.name.to_s.to_sym => xml_node_to_hash(result.root)}
-        rescue Exception => e
-          # raise your custom exception here
-        end
-      end
-
-      def xml_node_to_hash(node)
-        # If we are at the root of the document, start the hash
-        if node.element?
-          if node.children.present?
-            result_hash = {}
-
-            node.children.each do |child|
-              result = xml_node_to_hash(child)
-
-              if child.name == "text"
-                if !child.next_element.present? and !child.previous_element.present?
-                  return result
-                end
-              elsif result_hash[child.name.to_sym]
-                if result_hash[child.name.to_sym].is_a?(Object::Array)
-                  result_hash[child.name.to_sym] << result
-                else
-                  result_hash[child.name.to_sym] = [result_hash[child.name.to_sym]] << result
-                end
-              else
-                result_hash[child.name.to_sym] = result
-              end
-            end
-            return result_hash
-          elsif node.attributes.present?
-            # TODO
-          else
-            return nil
-        else
-          return node.content.to_s
-          end
-        end
-      end
-    end
-  end
-=end
 
 end
