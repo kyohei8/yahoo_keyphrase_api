@@ -1,5 +1,7 @@
 # Yahoo Keyphrase Api Client
 
+[![Build Status](https://travis-ci.org/kyohei8/yahoo_keyphrase_api.png)](https://travis-ci.org/kyohei8/yahoo_keyphrase_api)
+
 This is Yahoo Keyphrase Api Client for ruby.
 
 ### API documentation
