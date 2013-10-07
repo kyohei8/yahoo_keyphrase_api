@@ -1,9 +1,15 @@
 before_install:
   - gem install bundler
+env:
+  global:
+    - secure: "YAMcSDXbJYMcWnQBm3tpB5yWJWdNBUgPPvcjSzSE8GtOGKWyzngLAenURy2YFIgYmfV85IoPhgDZMNMzpdtfu5rZS5+OM8AId7KhRDqGY4dFPfiIFI6eerGxqGZFfftI4z7/ul42/mhvilfndlB0UCD2ArVirQirjcIYKYuJD1U="
 branches:
   only:
     - 'master'
 rvm:
   - 1.9.3
   - 2.0.0
+before_script:
+  - "cp spec/application.yml.sample spec/application.yml"
 script: "bundle exec rspec"
+

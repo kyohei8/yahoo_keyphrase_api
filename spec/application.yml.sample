@@ -1,2 +1,2 @@
 test:
-  app_id: [add appid]
+  app_id: ENV['APPID']
