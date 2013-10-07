@@ -1,7 +1,6 @@
 require "yahoo_keyphrase_api/version"
 require 'multi_json'
 require 'hashie'
-require 'nokogiri'
 require 'httparty'
 
 module YahooKeyphraseApi
