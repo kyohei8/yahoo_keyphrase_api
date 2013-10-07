@@ -10,8 +10,10 @@ This is Yahoo Keyphrase Api Client for ruby.
 Add this line to your application's Gemfile:
 
 ```ruby
-    gem 'yahoo_keyphrase_api'
+gem 'yahoo_keyphrase_api'
 ```
+and `bundle install`
+
 or
 
 ```sh
