@@ -1,24 +1,42 @@
-# YahooKeyphraseApi
+# Yahoo Keyphrase Api Client
 
-TODO: Write a gem description
+This is Yahoo Keyphrase Api Client for ruby.
+
+### API documentation
+[Yahoo Keyphrase API documentation](http://developer.yahoo.co.jp/webapi/jlp/keyphrase/v1/extract.html)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
+```ruby
     gem 'yahoo_keyphrase_api'
+```
+or
 
-And then execute:
+```sh
+$ gem install yahoo_keyphrase_api
+```
 
-    $ bundle
+## Configuration
 
-Or install it yourself as:
+```ruby
+require 'yahoo_keyphrase_api'
 
-    $ gem install yahoo_keyphrase_api
+# and setup
+YahooKeyphraseApi::Config.app_id = [application_ID]
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+ykp = YahooKeyphraseApi::KeyPhrase.new
+
+# extract key phrase
+ykp.extract '東京ミッドタウンから国立新美術館まで歩いて5分で着きます。のリクエストに対するレスポンスです。'
+ #=> <Hashie::Mash 5分=10 リクエスト=55 国立新美術館=100 東京ミッドタウン=69>
+```
+
 
 ## Contributing
 

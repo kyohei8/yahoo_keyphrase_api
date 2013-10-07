@@ -15,5 +15,8 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+
+.rspec
 .idea
 .rbenv-gemsets
+spec/application.yml
