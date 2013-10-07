@@ -1,3 +1,4 @@
+# encoding: utf-8
 require "yahoo_keyphrase_api/version"
 require 'multi_json'
 require 'hashie'
