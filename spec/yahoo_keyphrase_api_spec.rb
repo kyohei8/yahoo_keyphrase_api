@@ -6,8 +6,7 @@ describe 'YahooKeyphraseApi' do
 
   before do
     tokens = YAML.load_file(File.join(File.dirname(__FILE__),'./application.yml'))["test"]
-    p tokens
-    YahooKeyphraseApi::Config.app_id = tokens['app_id']
+    YahooKeyphraseApi::Config.app_id = tokens['app_id'] == 'appid' ? ENV['APPID'] : tokens['app_id']
     p YahooKeyphraseApi::Config.app_id
     @ykp = YahooKeyphraseApi::KeyPhrase.new
   end
