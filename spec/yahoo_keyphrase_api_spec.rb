@@ -40,11 +40,11 @@ describe 'YahooKeyphraseApi' do
 
   it '413 Request Entity Too Large' do
     large_file = File.dirname(__FILE__) + '/LargeData.txt'
-    p FileTest.size?(large_file) # its 33KB! why error? :(
-    c = File.read(large_file)
+    p "#{(FileTest.size?(large_file)/1024)}KB" # its 33KB! why error? :(
+    c = File.read(large_file, encding:Encoding::UTF_8)
 
     lambda{
-      res =  @ykp.extract(c)
+      @ykp.extract(c)
     }.should raise_error(YahooKeyphraseApi::YahooKeyPhraseApiError, 'Request Entity Too Large')
   end
 
