@@ -1,6 +1,7 @@
 # Yahoo Keyphrase Api Client
 
 [![Build Status](https://travis-ci.org/kyohei8/yahoo_keyphrase_api.png)](https://travis-ci.org/kyohei8/yahoo_keyphrase_api)
+[![Gem Version](https://badge.fury.io/rb/yahoo_keyphrase_api.png)](http://badge.fury.io/rb/yahoo_keyphrase_api)
 
 This is Yahoo Keyphrase Api Client for ruby.
 
@@ -39,6 +40,11 @@ ykp = YahooKeyphraseApi::KeyPhrase.new
 # extract key phrase
 ykp.extract '東京ミッドタウンから国立新美術館まで歩いて5分で着きます。のリクエストに対するレスポンスです。'
  #=> <Hashie::Mash 5分=10 リクエスト=55 国立新美術館=100 東京ミッドタウン=69>
+
+# GET Request
+ykp.extract '東京ミッドタウンから国立新美術館まで歩いて5分で着きます。のリクエストに対するレスポンスです。', :GET
+ #=> <Hashie::Mash 5分=10 リクエスト=55 国立新美術館=100 東京ミッドタウン=69>
+
 ```
 
 
